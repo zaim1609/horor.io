@@ -1,0 +1,183 @@
+body{
+ background-color: black;
+ overflow: hidden;
+ height: 600px;
+}
+
+.bg{
+    background-image: url("img/bangroun1.jpg");
+    background-size: cover;
+    width: 500px;
+    height: 600px;
+    margin: auto;
+}
+.bg::before{
+    content: "";
+    background-color: black;
+    
+    animation: gelap infinite;
+    animation-duration: 2s;
+    width: 500px;
+    height: 600px;
+    margin: auto;
+    position: absolute;
+    z-index: 1;
+
+}
+.bawah{
+    width: 500px;
+    /* background-color:brown; */
+    position: relative;
+    top: 500px;
+}
+
+.clue{
+    width: 500px;
+    /* background-color:#630b0b; */
+    z-index: 1;
+    position: relative;
+    display: none;
+    animation: kertas forwards;
+    animation-duration: 0.5s;
+}
+.koran{
+    width: 15%;
+    left: 75%;
+    position: relative;
+    z-index: 1;
+    display: block;
+    /* background-color: aqua; */
+}
+
+.paper{
+    width: 8%;
+    left: 50%;
+    
+    z-index: 3;
+    position: absolute;
+}
+
+.koranpopup2{
+    width: 300px;
+    height: 400px;
+    left: 40%;
+    top: 20%;
+    display: none;
+    z-index: 3;
+    position: absolute;
+}
+.surat1{
+    width: 300px;
+    height: 400px;
+    left: 40%;
+    top: 20%;
+    display: none;
+    z-index: 3;
+    position: absolute;
+}
+.atas{
+    background-color: rgb(6, 2, 27);
+}
+
+.bayang{
+    position:absolute;
+    width: 100px;
+    top: 35%;
+    left: 40%;
+    /* background-color: rgb(31, 9, 155); */
+    display: none;
+    opacity: 0.8;
+    animation: bayang forwards;
+    animation-duration: 1s;
+}
+
+.berdiri{
+    position: absolute;
+    
+    display: none;
+    animation: maju forwards;
+    animation-duration: 6s;
+    z-index: 2;
+}
+
+.font{
+    position: absolute;
+    /* background-color: burlywood; */
+    color: rgb(163, 21, 21);
+    font-size: 19px;
+    font-family:Courier, monospace;
+    font-weight: bold;
+    display: none;
+    top: 50%;
+}
+
+@keyframes gelap{
+    from{opacity: 0;}
+    to{opacity: 0.4;}
+}
+
+@keyframes kertas{
+    from{top: 30%;
+        opacity: 0;
+    }
+    to{top: 70%;
+        opacity: 1;
+    }
+}
+@keyframes maju{
+    0%   {width: 500px;
+        left: 29%;
+        top: 15%;
+        opacity: 0;
+        }
+    25%  {width: 700px;
+        left: 20%;
+        top: 0%;
+        opacity: 1;
+        }
+    75%  {width: 900px;left: 11%;top: -6%;
+    }
+    100% {width: 1000px;left: 6.5%;top: -8%;}
+}
+@keyframes bayang{
+    0%{
+        display: none;
+    }
+    50%{
+        display: block;
+    }
+    100%{
+        display: none;
+    }
+}
+
+@media screen and (max-device-width: 480px) {
+    .haiho{
+        overflow: hidden;
+        width: 500px;
+        height: 600px;
+        /* background-color: aqua; */
+    }
+    .berdiri{
+        /* display:block; */
+        animation: maju2 forwards;
+        animation-duration: 6s;
+        /* background-color: blueviolet; */
+    }
+ }
+
+ @keyframes maju2{
+    0%   {width: 500px;
+        left: -10%;
+        top: 15%;
+        opacity: 0;
+        }
+    25%  {width: 700px;
+        left: -40%;
+        top: 0%;
+        opacity: 1;
+        }
+    75%  {width: 900px;left: -70%;top: -6%;
+    }
+    100% {width: 1000px;left: -85%;top: -8%;}
+}
